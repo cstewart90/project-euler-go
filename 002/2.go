@@ -11,8 +11,18 @@ find the sum of the even-valued terms.
 
 package main
 
-import fmt
+import "fmt"
 
 func main() {
-
+	sum, num1, num2 := 0, 1, 2
+	for {
+		if num2 >= 4000000 {
+			break
+		}
+		if num2%2 == 0 {
+			sum += num2
+		}
+		num1, num2 = num2, num1+num2
+	}
+	fmt.Println(sum)
 }
